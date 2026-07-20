@@ -1,0 +1,31 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to VPS
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Deploy via SSH Action
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
+            # Dịch chuyển vào thư mục code trên server (Bạn cần sửa đường dẫn thư mục này)
+            cd /path/to/Family-Motel || exit
+            
+            # Kéo code mới nhất từ nhánh main
+            git reset --hard HEAD
+            git pull origin main
+            
+            # Khởi động lại toàn bộ docker
+            docker-compose up -d --build

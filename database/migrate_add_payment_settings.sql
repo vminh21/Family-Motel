@@ -1,0 +1,1 @@
+INSERT INTO settings (`key`, value, description) VALUES ('payment_bank_code', '', 'Mã ngân hàng (VCB, MB, TCB, Momo...)'), ('payment_account_no', '', 'Số tài khoản nhận tiền'), ('payment_account_name', '', 'Tên chủ tài khoản in hoa không dấu');
