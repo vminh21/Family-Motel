@@ -186,7 +186,7 @@ export default function InvoicePage({ params }) {
         ) : null}
 
         {/* Info Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', borderBottom: '2px solid #00d4aa' }}>
+        <div className="invoice-info-grid" style={{ gap: '0', borderBottom: '2px solid #00d4aa', marginBottom: '0' }}>
           <div style={{ padding: '20px 24px', borderRight: '1px solid #eee' }}>
             <div style={{ fontSize: '0.68rem', fontWeight: 700, color: '#999', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>Thông Tin Phòng</div>
             <div style={{ fontWeight: 700, fontSize: '1rem', color: '#0f1117' }}>{invoice.room_name}</div>

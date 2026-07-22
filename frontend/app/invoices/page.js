@@ -146,7 +146,7 @@ export default function InvoicesPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               {Object.entries(grouped).map(([period, invList]) => (
                 <div key={period} className="card">
-                  <div className="card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div className="card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
                     <div>
                       <div className="card-title">📅 {period}</div>
                       <div className="card-subtitle">{invList.length} hóa đơn · Tổng: {formatVND(invList.reduce((s, i) => s + parseFloat(i.total_amount), 0))}</div>

@@ -211,9 +211,9 @@ export default function BillingPage() {
                       🏠 {r.room_name}
                     </div>
                     
-                    <div style={{ display: 'flex', gap: '24px' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
                       {/* Điện */}
-                      <div style={{ flex: 1 }}>
+                      <div style={{ flex: '1 1 250px' }}>
                         <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '8px', fontWeight: 600 }}>⚡ Tiền Điện</div>
                         <div style={{ display: 'flex', gap: '12px' }}>
                           <select 
@@ -246,7 +246,7 @@ export default function BillingPage() {
                       </div>
 
                       {/* Nước */}
-                      <div style={{ flex: 1 }}>
+                      <div style={{ flex: '1 1 250px' }}>
                         <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '8px', fontWeight: 600 }}>💧 Tiền Nước</div>
                         <div style={{ display: 'flex', gap: '12px' }}>
                           <select 

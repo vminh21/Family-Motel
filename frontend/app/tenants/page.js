@@ -118,7 +118,7 @@ export default function TenantsPage() {
       <Sidebar />
       <main className="main-content">
         <div className="page-container">
-          <div className="page-header flex-between" style={{ display: 'flex', alignItems: 'flex-start' }}>
+          <div className="page-header-flex">
             <div>
               <h1>👤 Quản Lý Khách Thuê</h1>
               <p>Hồ sơ khách đang thuê · {tenants.length} khách</p>

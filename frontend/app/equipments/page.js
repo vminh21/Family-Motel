@@ -94,7 +94,7 @@ export default function EquipmentsPage() {
       <Sidebar />
       <main className="main-content">
         <div className="page-container">
-          <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className="page-header-flex">
             <div>
               <h1>🛋️ Quản Lý Thiết Bị</h1>
               <p>Quản lý tài sản, theo dõi tình trạng nội thất các phòng</p>
