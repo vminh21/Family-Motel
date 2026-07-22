@@ -22,3 +22,9 @@ out/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Temporary scratchpad & IDEs
+scratch/
+.vscode/
+.idea/
+*.log
