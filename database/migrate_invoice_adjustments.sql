@@ -1,1 +1,0 @@
-ALTER TABLE invoices ADD COLUMN adjustment_reason VARCHAR(255) NULL, ADD COLUMN adjustment_amount DECIMAL(12,0) NOT NULL DEFAULT 0;
