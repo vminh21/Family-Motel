@@ -1206,3 +1206,71 @@ img, svg { display: block; }
     display: none;
   }
 }
+
+/* ============================================================
+   RESPONSIVE UTILITIES FOR PAGES
+   ============================================================ */
+
+.page-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.page-header-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.theme-toggle-user {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: var(--bg-surface);
+  padding: 8px 20px;
+  border-radius: 30px;
+  box-shadow: var(--shadow-card);
+}
+
+.avatar-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header-flex {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 24px;
+  }
+
+  .page-header-actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+}
+

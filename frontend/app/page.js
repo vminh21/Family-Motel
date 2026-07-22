@@ -99,20 +99,20 @@ export default function DashboardPage() {
       <Sidebar />
       <main className="main-content">
         <div className="page-container">
-          <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+          <div className="page-header-flex">
             <div>
               <h1 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text-primary)' }}>Tổng Quan</h1>
               <p style={{ color: 'var(--text-secondary)', marginTop: 4, fontWeight: 500 }}>{currentDateStr}</p>
             </div>
-            <div style={{ display: 'flex', gap: '16px' }}>
+            <div className="page-header-actions">
               <button className="btn btn-primary" onClick={() => router.push('/billing')}>
                 🧾 Chốt Bill
               </button>
-              <div style={{ display: 'flex', gap: '16px', alignItems: 'center', background: 'var(--bg-surface)', padding: '8px 20px', borderRadius: '30px', boxShadow: 'var(--shadow-card)' }}>
+              <div className="theme-toggle-user">
                 <span onClick={toggleTheme} style={{ cursor: 'pointer', fontSize: '18px' }} title="Đổi giao diện">
                   {isDark ? '☀️' : '🌙'}
                 </span>
-                <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'var(--accent-primary)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>AD</div>
+                <div className="avatar-circle">AD</div>
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function DashboardPage() {
           ) : (
             <>
               {/* TOP STATS */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '24px' }}>
+              <div className="grid-cols-4" style={{ marginBottom: '24px' }}>
                 <div className="card" style={{ padding: '24px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div>
@@ -183,8 +183,7 @@ export default function DashboardPage() {
                 </div>
               </div>
 
-              {/* CHART & LISTS */}
-              <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '20px', marginBottom: '24px' }}>
+              <div className="dashboard-grid">
                 
                 {/* RECHARTS AREA CHART */}
                 <div className="card">

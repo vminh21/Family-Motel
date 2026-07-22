@@ -61,6 +61,17 @@ export default function Sidebar() {
     return pathname.startsWith(href);
   };
 
+  const getPageTitle = () => {
+    if (pathname === '/') return '📊 Dashboard';
+    if (pathname.startsWith('/rooms')) return '🏠 Phòng Trọ';
+    if (pathname.startsWith('/tenants')) return '👤 Khách Thuê';
+    if (pathname.startsWith('/equipments')) return '🛋️ Thiết Bị';
+    if (pathname.startsWith('/billing')) return '🧾 Chốt Bill';
+    if (pathname.startsWith('/invoices')) return '📄 Hóa Đơn';
+    if (pathname.startsWith('/settings')) return '⚙️ Cấu Hình';
+    return '🏠 Phòng Trọ';
+  };
+
   const SidebarContent = () => (
     <>
       <div className="sidebar-logo">
@@ -108,7 +119,7 @@ export default function Sidebar() {
         <button className="hamburger-btn" onClick={() => setIsOpen(true)} id="sidebar-toggle">
           ☰
         </button>
-        <h2>🏠 Phòng Trọ</h2>
+        <h2>{getPageTitle()}</h2>
         <div style={{ width: 40 }} />
       </header>
 
