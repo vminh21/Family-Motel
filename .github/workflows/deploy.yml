@@ -21,4 +21,4 @@ jobs:
             cd /home/minh/Family-Motel
             git pull origin main
             echo "${{ secrets.ENV_FILE }}" > backend/.env
-            docker compose up -d --build
+            docker-compose up -d --build
