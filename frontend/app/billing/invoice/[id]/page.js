@@ -64,7 +64,12 @@ export default function InvoicePage({ params }) {
 
   const getElectricityDetail = () => {
     const elec = lineItems.electricity || {};
-    if (elec.method === 'shared') return `${elec.kwh_allocated?.toFixed(1)} KWh × ${formatVND(elec.unit_price)}`;
+    if (elec.method === 'shared') {
+      if (elec.total_electricity_amount !== undefined && elec.shared_rooms_count !== undefined) {
+        return `Chia đều: ${formatVND(elec.total_electricity_amount)} / ${elec.shared_rooms_count} phòng`;
+      }
+      return `${elec.kwh_allocated?.toFixed(1)} KWh × ${formatVND(elec.unit_price)}`;
+    }
     if (elec.method === 'flat_rate') return 'Điện khoán';
     if (elec.method === 'free') return 'Miễn phí';
     return '—';
@@ -73,7 +78,11 @@ export default function InvoicePage({ params }) {
   const getWaterDetail = () => {
     const w = lineItems.water || {};
     if (w.method === 'free') return 'Miễn phí';
-    if (w.method === 'fixed') return 'Cố định/phòng';
+    if (w.method === 'fixed') {
+      return w.flat_amount !== null && w.flat_amount !== undefined 
+        ? `Cố định: ${formatVND(w.flat_amount)}`
+        : 'Cố định/phòng';
+    }
     return '—';
   };
 

@@ -362,7 +362,7 @@ export default function BillingPage() {
                       { label: 'Kỳ thanh toán', value: `Tháng ${cycleForm.month}/${cycleForm.year}` },
                       { label: 'Tổng tiền điện', value: `${new Intl.NumberFormat('vi-VN').format(cycleForm.total_electricity_amount)} ₫` },
                       { label: 'Số phòng', value: `${rooms.length} phòng` },
-                      { label: 'Phòng chia điện', value: `${rooms.filter(r => r.electricity_method === 'shared').length} phòng` },
+                      { label: 'Phòng chia điện', value: `${cycleForm.shared_rooms_count} phòng` },
                     ].map(item => (
                       <div key={item.label} style={{
                         background: 'var(--bg-elevated)',

@@ -8,12 +8,17 @@ on:
 jobs:
   deploy:
     name: Deploy to VPS
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-        
-      - name: Build and Restart Docker Containers
-        run: |
-          docker-compose up -d --build
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/minh/Family-Motel
+            git pull origin main
+            echo "${{ secrets.ENV_FILE }}" > backend/.env
+            docker compose up -d --build
