@@ -28,3 +28,6 @@ scratch/
 .vscode/
 .idea/
 *.log
+
+# Private Documentation
+DOCUMENTATION.md
